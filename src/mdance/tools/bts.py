@@ -263,6 +263,8 @@ def calculate_medoid(matrix, metric, N_atoms=1):
     >>> bts.calculate_medoid(X, metric='MSD', N_atoms=1)
     2
     """
+    if len(matrix) == 1:
+        return 0
     return np.argmax(calculate_comp_sim(matrix, metric, N_atoms))
 
 
@@ -293,6 +295,8 @@ def calculate_outlier(matrix, metric, N_atoms=1):
     >>> bts.calculate_outlier(X, metric='MSD', N_atoms=1)
     4
     """
+    if len(matrix) == 1:
+        return 0
     return np.argmin(calculate_comp_sim(matrix, metric, N_atoms))
 
 
@@ -371,8 +375,8 @@ def trim_outliers(matrix, n_trimmed, metric, N_atoms, criterion='comp_sim'):
     return matrix
 
 
-def diversity_selection(matrix, percentage: int, metric, N_atoms=1, 
-                        method='strat', start='medoid'):
+def diversity_selection(matrix, percentage: int, metric, N_atoms=1,
+                        method='strat', start='medoid', n_select=None):
     """*O(N)* method of selecting the most diverse subset of a data 
     matrix using the complementary similarity. 
     
@@ -397,6 +401,9 @@ def diversity_selection(matrix, percentage: int, metric, N_atoms=1,
     start : {'medoid', 'outlier', 'random', list}, default='medoid'
         The initial seed for initiating diversity selection. Either 
         from one of the options or a list of indices are valid inputs.
+    n_select : int, default=None
+        If ``method='comp_sim'``, stop after selecting this many objects
+        (at most ``percentage`` of the data). ``None`` selects them all.
 
     Raises
     ------
@@ -437,6 +444,8 @@ def diversity_selection(matrix, percentage: int, metric, N_atoms=1,
         selected_n = sorted_comps[indices_to_select].tolist()
         
     elif method == 'comp_sim':
+        if n_select is not None:
+            n_max = min(n_max, n_select)
         total_indices = np.array(range(n_total))
         
         if start =='medoid':

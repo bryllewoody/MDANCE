@@ -115,18 +115,6 @@ Key Features
 - Eliminates memory-intensive pairwise RMSD matrices.
 - Produces compact and well-separated clusters matching RTC quality.
 
-📊 CADENCE - Density-Based Clustering
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Novelty**: Bridges the gap between efficient *k*-means and robust density-based clustering using *n*-ary similarity framework.
-
-**Key Advantages**:
-
-- Swiftly pinpoints high and low-density regions in linear O(*N*) time.
-- Enables focused exploration of rare events.
-- Identifies most representative conformations efficiently.
-- Overcomes limitations of pairwise similarity operations.
-
 🏆 PRIME - Native Structure Prediction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -186,11 +174,6 @@ Algorithm Comparison
      - Flat clustering
      - Linear RTC replacement
      - General purpose
-   * - CADENCE
-     - O(*N*)
-     - Density-based
-     - *n*-ary density estimation
-     - Rare event detection
    * - PRIME
      - O(*N*)
      - Post-processing
@@ -233,11 +216,10 @@ Tutorials
 
 - `NANI Tutorial <https://mdance.readthedocs.io/en/latest/tutorials/nani.html>`_ - Smart *k*-means initialization.
 - `HELM Tutorial <https://mdance.readthedocs.io/en/latest/tutorials/helm.html>`_ - Scalable hierarchical clustering.
-- `DIVINE Scripts <https://github.com/mqcomplab/MDANCE/tree/main/scripts/divine>`_ - Deterministic divisive clustering. 1-``run_divine.py``, 2-``analysis_db.ipynb``, 3-``assign_labels.py``.
+- `DIVINE Scripts <https://github.com/mqcomplab/MDANCE/tree/main/scripts/divine>`_ - Deterministic divisive clustering.
 - `mdBIRCH Script <https://github.com/mqcomplab/MDANCE/blob/main/scripts/mdbirch/run_mdbirch.py>`_ - Online clustering for streaming MD data.
 - `SHINE Tutorial <https://github.com/mqcomplab/MDANCE/blob/main/tutorials/shine.md>`_ - Pathway analysis.
 - `eQual Tutorial <https://mdance.readthedocs.io/en/latest/tutorials/equal.html>`_ - Linear-time clustering.
-- CADENCE Tutorial - Density-based clustering (to be added).
 - `PRIME Tutorial <https://mdance.readthedocs.io/en/latest/tutorials/prime.html>`_ - Native structure retrieval.
 
 Publications
@@ -245,14 +227,17 @@ Publications
 
 Our methods are backed by peer-reviewed research:
 
-- **NANI**: `J. Chem. Theory Comput. 2024 <https://pubs.acs.org/doi/10.1021/acs.jctc.4c00308>`_
-- **HELM**: `J. Chem. Inf. Model. 2025 <https://pubs.acs.org/doi/abs/10.1021/acs.jcim.3c01287>`_
-- **DIVINE**: `BioRxiv 2025 <https://www.biorxiv.org/content/10.1101/2025.06.20.660828v1>`_
-- **mdBIRCH**: `BioRxiv 2025 <https://www.biorxiv.org/content/10.1101/2025.11.05.686879v1.abstract>`_
-- **SHINE**: `J. Chem. Inf. Model. 2025 <https://pubs.acs.org/doi/abs/10.1021/acs.jcim.5c00240>`_
-- **eQual**: `J. Chem. Inf. Model. 2025 <https://pubs.acs.org/doi/abs/10.1021/acs.jcim.4c02341>`_
-- **CADENCE**: `J. Chem. Inf. Model. 2025 <https://pubs.acs.org/doi/10.1021/acs.jcim.5c00392>`_
-- **PRIME**: `J. Chem. Theory Comput. 2024 <https://pubs.acs.org/doi/10.1021/acs.jctc.4c00362>`_
+- **NANI**: `J. Chem. Theory Comput. 2024 <https://doi.org/10.1021/acs.jctc.4c00308>`__; `J. Chem. Inf. Model. 2026 <https://doi.org/10.1021/acs.jcim.5c02741>`__
+- **HELM**: `J. Chem. Inf. Model. 2025 <https://doi.org/10.1021/acs.jcim.5c00539>`__
+- **DIVINE**: `J. Chem. Inf. Model. 2026 <https://doi.org/10.1021/acs.jcim.5c02740>`__
+- **mdBIRCH**: `J. Chem. Theory Comput. 2026 <https://doi.org/10.1021/acs.jctc.6c00221>`__
+- **SHINE**: `J. Chem. Inf. Model. 2025 <https://doi.org/10.1021/acs.jcim.5c00240>`__
+- **PRISM**: `Digital Discovery 2026 <https://doi.org/10.1039/d6dd00288a>`__
+- **eQual**: `J. Chem. Inf. Model. 2025 <https://doi.org/10.1021/acs.jcim.4c02341>`__
+- **PRIME**: `J. Chem. Theory Comput. 2024 <https://doi.org/10.1021/acs.jctc.4c00362>`__
+
+If you use MDANCE, please cite the paper of each method you use. BibTeX entries for all papers are in
+`CITATION.bib <https://github.com/mqcomplab/MDANCE/blob/main/CITATION.bib>`__.
 
 Impact
 ------

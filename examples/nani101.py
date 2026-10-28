@@ -66,8 +66,8 @@ initiators = initiators[:n_clusters]
 #   - Create an instance of KMeans.
 #   - ``n_clusters``: number of clusters.
 #   - ``init``: initial centroids.
-#  - ``n_init``: NANI only needs one initialization!
-#  - ``random_state``: We don't need this because NANI is 100% deterministic!
+#   - ``n_init``: NANI only needs one initialization!
+#   - ``random_state``: We don't need this because NANI is 100% deterministic!
 
 kmeans = KMeans(n_clusters=n_clusters, init=initiators, n_init=1, random_state=None)
 kmeans.fit(data)
