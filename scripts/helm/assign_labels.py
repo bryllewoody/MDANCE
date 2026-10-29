@@ -31,7 +31,9 @@ if __name__ == '__main__':
         cluster_dict = pkl.load(f)
     all_indices = [i[0] for i in cluster_dict[n_clusters]]; print(f'cluster indices: {all_indices}')
     pre_frames, pre_labels = np.loadtxt(pre_cluster_labels, unpack=True, dtype=int, delimiter=',')
-    pre_frames = pre_frames // sieve
+    # Keep frames that are in the sieved trajectory and skip unassigned frames (-1)
+    keep = (pre_frames % sieve == 0) & (pre_labels >= 0)
+    pre_frames, pre_labels = pre_frames[keep] // sieve, pre_labels[keep]
 
     # Load cluster info based on pre_labels
     pre_clusters = []
@@ -79,7 +81,7 @@ if __name__ == '__main__':
             msd_to_medoid = np.array(msd_to_medoid)
             sorted = np.argsort(msd_to_medoid[:, 1])[:n_structures]
             best = np.array(frame_indices_all[key])[sorted]
-            best_frame_indices.append(np.sort(best))
+            best_frame_indices.append(best)
         else:
             best_frame_indices.append(np.array(frame_indices_all[key]))
     params = f'HELM, n_clusters: {n_clusters}, pickle_file: {pickle_file}, metric: {metric}, sieve: {sieve}'

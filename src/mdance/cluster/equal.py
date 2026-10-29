@@ -42,12 +42,12 @@ class ExtendedQuality:
         If True, will reject low density clusters if they are below the minimum cluster size.
     percentage : int, default=10
         Percentage of the dataset to be used for the initial selection 
-        of the initial centers. (**kwargs)
+        of the initial centers. (``**kwargs``)
     sim_threshold : float
         The largest similarity value that is acceptable for the proposed 
-        cluster. (**kwargs)
+        cluster. (``**kwargs``)
     min_samples : {float, int}, default=10
-        Minimum number of data points required in a cluster. (**kwargs)
+        Minimum number of data points required in a cluster. (``**kwargs``)
         float: Real number between (0, 1). Indicates the % of the total data.
         int: Number of data points.
     """

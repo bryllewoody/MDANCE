@@ -117,15 +117,13 @@ are in the prime directory) using the ``union`` method (2.2 in *Fig 2*) and
 Sokal Michener index. In addition, 10% of the outliers were trimmed. You can either ``python exec_similarity.py``
 (which uses the sample summary ``mdance.data.summary_6``) or run the example above. 
 
-.. _outputs-1:
-
 Outputs
 ^^^^^^^
 
 | ``outputs/w_union_SM_t10.txt`` file with the similarity dictionary. 
 | The result is a dictionary organized as followes: 
 
-.. code:: plaintext
+.. code:: text
 
     {
         "frame_0": [   
@@ -149,8 +147,6 @@ the similarity dictionary generated in step 3.
 | ``-t``    Fraction of outliers to trim in decimals (default is None).
 | ``-d``    directory where the ``normed_clusttraj.c*`` files are located (required if method is None)
 
-.. _example-1:
-
 Execution
 ^^^^^^^^^
 
@@ -159,8 +155,6 @@ Make sure your pwd is ``$PATH/MDANCE/scripts/prime``.
 .. code:: bash
 
     $ prime_rep -m union -s outputs -d outputs/normed_clusters -t 0.1 -i SM
-
-.. _outputs-2:
 
 Outputs
 ^^^^^^^

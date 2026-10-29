@@ -35,9 +35,9 @@ class KmeansNANI:
         options allowed by :class:`mdance.cluster.nani.KmeansNANI`.
     percentage : int, default=10
         Percentage of the dataset to be used for the initial selection of the 
-        initial centers. (**kwargs)
+        initial centers. (``**kwargs``)
     n_bins : int, default=10
-        Number of complementary similarity bins used by ``init_type='quota'``. (**kwargs)
+        Number of complementary similarity bins used by ``init_type='quota'``. (``**kwargs``)
     
     Attributes
     ----------

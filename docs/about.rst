@@ -3,7 +3,6 @@ MDANCE: Molecular Dynamics Analysis with *N*-ary Clustering Ensembles
 
 .. image:: https://raw.githubusercontent.com/mqcomplab/MDANCE/main/docs/_static/mdance.png
    :width: 300
-   :height: auto
    :align: center
 
 A transformative framework for analyzing molecular dynamics simulations through advanced clustering algorithms
@@ -120,17 +119,15 @@ Key Features
 
 **Game Changer**: Predicts native protein structures from simulation data with unprecedented accuracy. 
 
-.. table:: PRIME Validation
+.. list-table:: PRIME Validation
    :widths: 60 40
 
-   ============================================  ==================================
-   **Scientific Validation**: PRIME (Protein     .. image:: https://raw.githubusercontent.com/mqcomplab/MDANCE/main/docs/img/2k2e.png
-      Retrieval via Integrative Molecular           :width: 300
-      Ensembles) perfectly mapped all structural    :alt: 2k2e
-      motifs in benchmark studies and consistently  
-      identified native structures within 2Å RMSD   
-      of experimental data.                        *Superposition of native structure using PRIME (yellow) and experimental native structures (blue) of 2k2e.*
-   ============================================  ==================================
+   * - **Scientific Validation**: PRIME (Protein Retrieval via Integrative Molecular Ensembles) perfectly mapped all structural motifs in benchmark studies and consistently identified native structures within 2Å RMSD of experimental data.
+     - .. image:: https://raw.githubusercontent.com/mqcomplab/MDANCE/main/docs/img/2k2e.png
+          :width: 300
+          :alt: 2k2e
+
+       *Superposition of native structure using PRIME (yellow) and experimental native structures (blue) of 2k2e.*
 
 Algorithm Comparison
 ~~~~~~~~~~~~~~~~~~~~

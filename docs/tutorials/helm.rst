@@ -141,8 +141,6 @@ HELM requires a set of initial clusters to start with. You can start from any cl
    plot_metrics = True                                 # Plot DBI and CHI, and suggest values
    x_min = 5                                           # Only suggest values >= x_min (None = all)
 
-.. _system-info-1:
-
 Inputs
 ^^^^^^
 
@@ -153,7 +151,8 @@ System parameters
 | ``sieve``: Reading every ``sieve`` frames from the trajectory.
 | ``N_atoms``: The number of atoms used in the clustering.
 
-- **HELM parameters**
+HELM parameters
+'''''''''''''''
 | ``metric``: The metric used to calculate the similarity between frames (See ``mdance.tools.bts.extended_comparisons`` for details).
 | ``merge_scheme``: The merging scheme to use. {``inter``, ``intra``, ``half``}. ``inter`` merges clusters with lowest interdistance. ``intra`` merges clusters with lowest intradistance. ``half`` merges clusters with the lowest combined MSD minus the average MSD of the two clusters.
 | ``link`` *(optional)*: ``'ward'`` to merge the clusters with Ward linkage instead of ``merge_scheme``. Default is None.
@@ -184,7 +183,7 @@ Files are named after ``link``, or ``merge_scheme`` if ``link`` is None (e.g. ``
 * ``outputs/intra_helm_scores.csv`` containing the Calinski-Harabasz and Davies-Bouldin scores for each number of clusters.
 
 5. Get most optimal number of clusters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The clustering screening results are analyzed using the
 Davies-Bouldin index (DBI) and the Calinski-Harabasz index (CHI). There are
@@ -217,12 +216,8 @@ The same analysis can be run on any scores csv with ``mdance.outputs.plot.plot_s
    n_structures = 11                                   # Frames saved per cluster, closest to its medoid
    output_dir = 'outputs'                              # Folder for output files
 
-.. _inputs-1:
-
 Inputs
 ^^^^^^
-
-.. _system-info-2:
 
 System parameters
 '''''''''''''''''

@@ -95,7 +95,7 @@ mdance.data.cc_sim
 Complementary similarity of sample trajectory data for testing Molecular Dynamics systems. 
 
 mdance.data.trimmed_sim
----------------------
+-----------------------
 
 Trimmed outliers of sample trajectory data for testing Molecular Dynamics systems.
 

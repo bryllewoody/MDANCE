@@ -133,8 +133,6 @@ script:
    plot_metrics = True                                 # Plot DBI and CHI, and suggest values
    x_min = None                                        # Only suggest values >= x_min (None = all)
 
-.. _system-info-1:
-
 Inputs
 ^^^^^^
 
@@ -212,12 +210,8 @@ script:
    n_structures = 11                                   # Frames saved per cluster, closest to its medoid
    output_dir = 'outputs'                              # Folder for output files
 
-.. _inputs-1:
-
 Inputs
 ^^^^^^
-
-.. _system-info-2:
 
 System parameters
 '''''''''''''''''
@@ -235,8 +229,6 @@ System parameters
 | ``n_structures`` is the number of frames to extract from each cluster.
 | ``output_dir`` is the directory to store the clustering results.
 
-.. _execution-1:
-
 Execution
 ^^^^^^^^^
 
@@ -245,8 +237,6 @@ Make sure your pwd is ``$PATH/MDANCE/scripts/nani``.
 .. code:: bash
 
    $ python assign_labels.py
-
-.. _outputs-1:
 
 Outputs
 ^^^^^^^

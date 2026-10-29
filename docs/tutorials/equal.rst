@@ -133,8 +133,6 @@ The following parameters to be specified in the script:
     plot_metrics = True                                 # Plot DBI and CHI, and suggest values
     x_min = None                                        # Only suggest values >= x_min (None = all)
 
-.. _system-info-2:
-
 Inputs
 ^^^^^^
 System parameters
@@ -222,8 +220,6 @@ The same analysis can be run on any screening csv with ``mdance.outputs.plot`` (
     n_structures = 11                                   # Frames saved per cluster, closest to its medoid
     open_clusters = None                                # Saved clusters .pkl to reuse (None = recluster)
     output_dir = 'outputs'                              # Folder for output files
-
-.. _system-info-3:
 
 Inputs - New parameters
 ^^^^^^^^^^^^^^^^^^^^^^^

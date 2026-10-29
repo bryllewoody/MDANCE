@@ -35,8 +35,9 @@ if __name__ == '__main__':
     os.makedirs(output_dir, exist_ok=True)
     traj_numpy = np.load(input_traj_numpy)[::sieve]
     frames, labels = np.loadtxt(cluster_labels, dtype=int, unpack=True, delimiter=',')
-    # divide sieve by 10 to get the correct frame number
-    frames = frames // sieve
+    # Keep frames that are in the sieved trajectory and skip unassigned frames (-1)
+    keep = (frames % sieve == 0) & (labels >= 0)
+    frames, labels = frames[keep] // sieve, labels[keep]
     unique_labels = np.sort(np.unique(labels))
 
     # Extract cluster data from trajectory

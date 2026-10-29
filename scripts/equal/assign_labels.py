@@ -45,13 +45,14 @@ if __name__ == '__main__':
               f'sim_threshold: {sim_threshold}, min_samples: {min_samples}, sieve: {sieve}')
 
     # eQual returns the frames of each cluster; map them back to frame indices
+    # (identical frames are matched to separate indices, in order)
     frame_index = {}
     for i, frame in enumerate(traj_numpy):
-        frame_index.setdefault(frame.tobytes(), i)
+        frame_index.setdefault(frame.tobytes(), []).append(i)
     labels = np.full(total_frames, -1, dtype=int)
     cluster_indices = {}
     for k, v in clusters.items():
-        cluster_indices[k] = np.array([frame_index[np.asarray(frame).tobytes()] for frame in v])
+        cluster_indices[k] = np.array([frame_index[np.asarray(frame).tobytes()].pop(0) for frame in v])
         labels[cluster_indices[k]] = k
 
     # Extract best n structures for each cluster
@@ -62,7 +63,7 @@ if __name__ == '__main__':
             medoid = traj_numpy[cluster][medoid_index]
             msd_to_medoid = [extended_comparison(np.array([frame, medoid]), data_type='full', metric=metric,
                                                  N_atoms=N_atoms) for frame in traj_numpy[cluster]]
-            best = np.sort(cluster[np.argsort(msd_to_medoid)[:n_structures]])
+            best = cluster[np.argsort(msd_to_medoid)[:n_structures]]
         else:
             best = cluster
         for frame in best:

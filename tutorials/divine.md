@@ -88,7 +88,7 @@ output_dir = 'outputs'                              # Folder for output files
 
 **Analysis parameters:**
 ```python
-plot_metrics = True            # Plot DBI and CHI, and suggest values
+plot_metrics = True                                 # Plot DBI and CHI, and suggest values
 x_min = 5                                           # Only suggest values >= x_min (None = all)
 ```
 

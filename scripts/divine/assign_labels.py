@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
         distances = [extended_comparison(np.array([frame, medoid_frame]), data_type='full', metric="MSD", N_atoms=N_atoms) for frame in cluster_data]
         sorted_indices = np.argsort(distances)[:top_n]
-        best_frames = np.sort(cluster[sorted_indices])
+        best_frames = cluster[sorted_indices]
 
         best_frames_indices = np.column_stack((selected_indices[best_frames], [cid] * len(best_frames)))
         best_frames_list.append(best_frames_indices)

@@ -15,7 +15,7 @@ sieve = 1                                           # Use every sieve-th frame (
 
 # NANI parameters
 output_dir = 'outputs'                              # Folder for output files
-init_type = 'comp_sim'                             # Seeding method {'strat_all', 'strat_reduced', 'comp_sim', 'div_select', 'k-means++', 'random'}
+init_type = 'strat_all'                             # Seeding method {'strat_all', 'strat_reduced', 'comp_sim', 'div_select', 'k-means++', 'random'}
 metric = 'MSD'                                      # Distance metric for clustering
 start_n_clusters = 5                                # At least 2 clusters
 end_n_clusters = 30                                 # Maximum number of clusters

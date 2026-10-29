@@ -510,10 +510,10 @@ def get_new_index_n(matrix, metric, selected_condensed, n, select_from_n, **kwar
     select_from_n : array-like of shape (n_samples,)
         Array of indices to select from. 
     sq_selected_condensed : array-like of shape (n_features,), optional
-        Condensed sum of the squared selected fingerprints. (**kwargs)
+        Condensed sum of the squared selected fingerprints. (``**kwargs``)
     N_atoms : int, optional
         Number of atoms in the system used for normalization.
-        ``N_atoms=1`` for non-Molecular Dynamics datasets. (**kwargs)
+        ``N_atoms=1`` for non-Molecular Dynamics datasets. (``**kwargs``)
     
     Returns
     -------

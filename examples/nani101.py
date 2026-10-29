@@ -52,6 +52,7 @@ plt.show()
 #
 # As you can see, *k*-means++ initialization did not get it right. 
 # Let's use NANI to optimize initial centroids.
+#
 #   - Create an instance of KmeansNANI.
 #   - ``data``: data to cluster.
 #   - ``n_clusters``: number of clusters.

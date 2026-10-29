@@ -41,7 +41,7 @@ if __name__ == '__main__':
             medoid = traj_numpy[cluster][medoid_index]
             msd_to_medoid = [extended_comparison(np.array([frame, medoid]), data_type='full', metric=metric,
                                                  N_atoms=N_atoms) for frame in traj_numpy[cluster]]
-            best = np.sort(cluster[np.argsort(msd_to_medoid)[:n_structures]])
+            best = cluster[np.argsort(msd_to_medoid)[:n_structures]]
         else:
             best = cluster
         for frame in best:
